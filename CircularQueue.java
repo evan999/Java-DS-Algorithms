@@ -35,6 +35,7 @@ class MyCircularQueue {
 			if (head==tail){
 					head = -1;
 					tail = -1;
+					return true;
 			}
 			
 			head = (head + 1) % size;
