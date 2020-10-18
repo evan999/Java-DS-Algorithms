@@ -12,12 +12,39 @@ class Solution {
 					return Collections.emptyList();
 			}
 			
+			if(nums.length == 1){
+					// No need to permute if there is only one element in array
+			}
+			
+			
 			List<List<Integer>> permutations = new ArrayList<List<Integer>>();
 			
-			for(int num = 0; num < nums.length; num++){
-					for(int digit = 0; digit < nums[num].length; digit++){
-							
+			//permutations.add(new ArrayList<Integer>());
+			
+			for(int num = 0; num < nums.length-1; num++){
+					//permutations.get(0).add(nums[num]);
+					// swapping
+					// if nums.length is odd
+					//   swap(nums[i], nums[n-1])
+					if(nums.length % 2 != 0){
+							// swap(nums[1], nums[n-1])
+							int temp = nums[nums.length-1];
+							nums[nums.length - 1] = nums[0];
+							nums[0] = temp;
 					}
+					else{
+							// swap(nums[i], nums[n-1])
+							int temp = nums[nums.length-1];
+							nums[nums.length - 1] = nums[num];
+							nums[num] = temp;
+					}
+					
+					// add permutations to the arraylist
+					//permutations.get(0).add(nums);
+					List<Integer> numsList = Arrays.asList(nums);
+					permutations.get(0).add(numsList);
+					
+					
 			}
 			
 			
@@ -31,4 +58,5 @@ class Solution {
 			
 			
 	}
+	
 }
