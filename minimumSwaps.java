@@ -2,26 +2,25 @@ public class Solution {
 
     // Complete the minimumSwaps function below.
     static int minimumSwaps(int[] arr) {
-        int minSwaps = 0;
-        
-        for(int i = 0; i < arr.length-1; i++){
-            int minIndex = i;
-            for(int j = i + 1; j < arr.length; j++){
-                if(arr[j] < arr[minIndex]){
-                    minIndex = j; 
-                }
-            }
-            
-            // What if arr is already swapped?
-            
-            
-            int temp = arr[minIndex];
-            arr[minIndex] = arr[i];
-            arr[i] = temp;
-            minSwaps++;
+        int i = 0, j = 0,
+            len = arr.length,
+            swapCount = 0;
+        while (i < len) {
+            j = arr[i] - 1;
+            if (i != j)
+                swapCount += swap(i, j, arr);
+            else
+                i++;
         }
-        
-        return minSwaps;
+        return swapCount;
+    }
+    
+    static int swap(int a, int b, int[] arr) {
+        System.out.println("swap (" + a + "," + b + ")");
+        int item = arr[a];
+        arr[a] = arr[b];
+        arr[b] = item;
+        return 1;
     }
 
     private static final Scanner scanner = new Scanner(System.in);

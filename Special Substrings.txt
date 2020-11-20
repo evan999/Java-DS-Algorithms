@@ -1,0 +1,34 @@
+s = mnonopoo
+
+A string is said to be a special string if either of two conditions is met:
+
+1) All chars are the same
+OR
+2) All chars except middle one are the same
+
+Special substring - any substr of a str which meets one of the two above criteria.
+
+Problem: How many special substrings can be formed from the str?
+
+s = mnonopoo
+
+special substrs = [m, n, o, n, o, p, o, o, non, ono, opo, oo]
+
+Edge cases:
+
+if char is of length = 1
+	special substr
+
+
+1. Extract all substrs from the str (there CAN be duplicates)
+2. Determine which substrs are "special substrs"
+	-Check for substrs with just 1 char length. All 1 char strs are special substrs
+	-Check for substrs with 1 char repeated -> Special substrs as they meet criteria #1 of special substrs
+	-> All chars are the same
+	-Check for substrs with two chars, one repeated on both sides, and one in the middle
+		-Find middle char and compare both sides of the substr
+
+
+
+
+
