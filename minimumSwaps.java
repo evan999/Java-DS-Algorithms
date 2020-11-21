@@ -1,6 +1,5 @@
 public class Solution {
 
-    // Complete the minimumSwaps function below.
     static int minimumSwaps(int[] arr) {
         int i = 0, j = 0,
             len = arr.length,
