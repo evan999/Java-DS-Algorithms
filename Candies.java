@@ -21,26 +21,49 @@ class Result {
 
 	public static long candies(int n, List<Integer> arr) {
 		// Write your code here
-		List<Integer> candies = new ArrayList<>();
+		int[] candies = new int[arr.size()];
+
+		int current = 0;
+		int next = 0;
+
+		int candy = 1;
 
 		for (int student = 0; student < arr.size() - 1; student++) {
-			int candy = 1;
-			if (arr.get(student) > arr.get(student + 1)) {
-				candy++;
-				candies.add(candy);
-				System.out.println(candy);
+
+			current = arr.get(student);
+			next = arr.get(student + 1);
+
+			if (student == 0) {
+				current = arr.get(student);
+				next = arr.get(student + 1);
+				if (current < next) {
+					candies[student] = 1;
+					candies[student + 1] = candy++;
+				} else if (current > next) {
+					candies[student] = candy++;
+					candy = 1;
+					candies[student + 1] = candy;
+				} else {
+					candies[student] = 1;
+					candies[student + 1] = 1;
+				}
+			}
+
+			if (next > student) {
+				candies[student + 1] = candy++;
 			} else {
-				candies.add(candy);
-				candy++;
-				candies.add(candy);
-				System.out.println(candy);
+				candy = 1;
+				candies[student + 1] = candy;
 			}
 		}
 
+		// System.out.println(candies);
+
 		// Get the sum of the candies
 		int sum = 0;
-		for (int candy = 0; candy < candies.size(); candy++) {
-			sum += candies.get(candy);
+		for (int num = 0; num < candies.length; num++) {
+			sum += candies[num];
+			System.out.println(candies[num]);
 		}
 
 		return sum;
