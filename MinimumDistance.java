@@ -39,7 +39,7 @@ class Result {
         int firstIndex = 0;
         int secondIndex = a.size()-1;
         int numOfPairs = 0;
-        System.out.println("1current distance: "+ (secondIndex - firstIndex));
+        System.out.println("current distance: "+ (secondIndex - firstIndex));
         System.out.println("a.size() / 2:  "+ (a.size() / 2));
         while(firstIndex < (a.size() / 2)){
                 System.out.println("2current distance: "+ (secondIndex - firstIndex));
