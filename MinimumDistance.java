@@ -12,27 +12,6 @@ import static java.util.stream.Collectors.toList;​
 
 class Result {
 ​
-    /*
-     * Complete the 'minimumDistances' function below.
-     *
-     * The function is expected to return an INTEGER.
-     * The function accepts INTEGER_ARRAY a as parameter.
-     */
-​
-    //minDistance = Integer.maxValue;
-    //firstIndex --> 0
-    //secondIndex --> size-1
-    //update the indexes with each loop. stop loop when firstIndex > n % 2.
-    //numOfPairs = 0;
-    //compare values to see if they're the same
-        //distance = 0;
-        //if they are, caculate distance b/w them (indeces absolute difference)
-            //distance = diff b/w indeces (secondIndex - firstIndex)
-            //if distance < minDistance, minDistance = distance;
-            //numOfPairs++;
-    //if numOfPairs == 0, return -1. 
-​
-​
     public static int minimumDistances(List<Integer> a) {
     // Write your code here
         int minDistance = Integer.MAX_VALUE;
@@ -64,7 +43,7 @@ class Result {
 }​
 
 public class Solution {
-	public static void main(String[] args) throws IOException {
+    public static void main(String[] args) throws IOException {
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
         BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(System.getenv("OUTPUT_PATH")));
 ​
