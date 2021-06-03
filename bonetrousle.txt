@@ -1,0 +1,141 @@
+skele-ton
+
+k boxes of pasta
+
+box numbered sequentially 1 to k
+
+Box number = number of sticks of spaghetti in the box
+
+Box 1 = 1 stick
+Box 2 = 2 sticks
+...
+Box k = k sticks
+
+Only one box of each kind is stocked
+
+Purchase:
+Purchases n sticks of spaghetti 
+by purchasing exactly b boxes (no more, no less)
+
+Which boxes to purchase?
+
+Given values of n, k, and b for t trips to the store
+Determine which boxes must be purchased during each trip
+
+For each trip, print a single line of b distinct space-separated integers
+On this single line, print the box numbers for each box of spaghetti being purchased
+
+Note: Store only has one box of each kind. There cannot be duplicate boxes!
+
+If not possible to buy n sticks of spaghetti by purchasing b boxes, print -1
+
+Example 1:
+
+n = 14 sticks
+b = 3 boxes
+k = 8 box sizes
+
+One possible solution: he can buy boxes of sizes [8,4,2]
+Other possible solutions: [7,5,2], [7,6,1], and others
+Another possible combination?:
+[
+
+Cannot exceed k, b or n! Otherwise, not a valid combination!
+
+IMPORTANT NOTE: ANY combination of boxes that is valid can be used. Only one combination is needed to return!
+
+Returns a list of long integers
+
+Input: two long integers n sticks and k box sizes, an integer b for number of boxes
+
+Input: n, k, and b
+
+t = number of trips to the store
+
+Sample: 
+t = 4
+
+4
+n   k   b
+12  8   3
+10  3   3
+9   10  2
+9   10  2
+
+n = 12 k = 8 b = 3
+n = 10 k = 3 b = 3
+n = 9  k = 10 b = 2
+n = 9  k = 10 b = 2
+
+One possible solution:
+
+[2, 3, 7]
+2 + 3 + 7 = 12
+There are other valid solutions!
+
+
+2:
+b = 3 boxes
+n = 10 sticks
+k = 3 box sizes
+
+any combination of 3 box sizes to sum to n?
+
+There are only 3 box sizes
+1, 2, and 3 
+
+1 + 2 + 3 = 6 < 10, so not possible!
+Return -1
+
+3, 4:
+
+n = 9
+k = 10
+b = 2
+
+b = 2 boxes
+k = 10 box sizes
+n = 9 sticks
+
+Need 2 box sizes that will sum to 9
+
+2 + 7
+
+1 + 8
+
+3 + 6
+
+4 + 5
+
+5 + 4
+
+
+What's the OPTIMAL way to get the solution?
+
+Note: This is a subset sum problem!
+
+O(n^n) is exponential, and will time out on most test cases!
+So n pointers is not an efficient approach!
+
+Pseudocode:
+
+three counters n k and b 
+cannot exceed n, k, or b values!
+
+initialize three counters for n, k, and b
+counterN = 0 (or sum)
+counterK = 0
+counterB = 0
+instantiate arraylist
+
+while sum < n or counterK < k or counterB < b
+
+possible to use binary search?
+
+
+
+
+
+
+
+
