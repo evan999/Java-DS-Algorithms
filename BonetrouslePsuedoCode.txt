@@ -1,0 +1,14 @@
+Build a collection with starting values? (1 - b)
+Add the values in collection
+If sum > n, return -1
+If sum is equal to n, return collection
+If sum of collection < n
+   start at b
+   difference = n - sum of collection
+   b + diff = sum?
+   Add difference to last element of collection
+   Check if new element is less than or equal to k
+   return new collection
+   If not greater than k set element to k and k-1
+   repeat with next element
+   If I run out of elements, return -1
