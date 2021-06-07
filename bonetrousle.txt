@@ -115,7 +115,7 @@ What's the OPTIMAL way to get the solution?
 Note: This is a subset sum problem!
 
 O(n^n) is exponential, and will time out on most test cases!
-So n pointers is not an efficient approach!
+So n pointers is not an efficient approach! We will TIME OUT!
 
 Pseudocode:
 
