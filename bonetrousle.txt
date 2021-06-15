@@ -117,20 +117,14 @@ Note: This is a subset sum problem!
 O(n^n) is exponential, and will time out on most test cases!
 So n pointers is not an efficient approach! We will TIME OUT!
 
-Pseudocode:
+Constraint:
+b <= k
 
-three counters n k and b 
-cannot exceed n, k, or b values!
+b cannot be bigger than k
 
-initialize three counters for n, k, and b
-counterN = 0 (or sum)
-counterK = 0
-counterB = 0
-instantiate arraylist
+There will never be more boxes purchased than boxes available in store
 
-while sum < n or counterK < k or counterB < b
 
-possible to use binary search?
 
 
 
