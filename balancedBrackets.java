@@ -21,51 +21,66 @@ class Result {
 
 	public static String isBalanced(String s) {
 		// Write your code here
-		Stack<Character> chars = new Stack<>();
-		// char[] strChars = s.toCharArray();
-		for (int character = 0; character < s.length(); character++) {
-			Character bracket = s.charAt(character);
-			if (bracket.equals('(') || bracket.equals('[') || bracket.equals('{')) {
-				chars.push(bracket);
-			}
+		// convert string into char array
+		// initialize stack
+		// loop through chars in string
+		// if char is opening bracket
+		// push char to stack
+		// else if char is closing bracket
+		// pop top of stack
+		// if popped char is not matching bracket
+		// string not balanced
+		// return "NO"
+		// repeat until all chars have been traversed
 
-			if (bracket.equals(')') || bracket.equals(']') || bracket.equals('}')) {
-				// if matching opening bracket is on top of stack
-				// pop closing bracket at index
-				if (bracket.equals(')')) {
-					if ((chars.peek()).equals('(')) {
-						chars.pop();
+		// if stack is empty
+		// return "YES"
+		// else
+		// return "NO"
+
+		char[] brackets = s.toCharArray();
+		Stack<Character> stack = new Stack<>();
+
+		for (char bracket : brackets) {
+			if (bracket == '{' || bracket == '[' || bracket == '(') {
+				stack.push(bracket);
+			} else if ((bracket == '}') || (bracket == ']') || (bracket == ')')) {
+				if (stack.empty()) {
+					return "NO";
+				}
+				char popped = stack.pop();
+				if (bracket == '}') {
+					if (popped == '{') {
+						continue;
 					} else {
-						break;
+						return "NO";
+					}
+				}
+				if (bracket == ']') {
+					if (popped == '[') {
+						continue;
+					} else {
+						return "NO";
 					}
 				}
 
-				if (bracket.equals(']')) {
-					if ((chars.peek()).equals('[')) {
-						chars.pop();
+				if (bracket == ')') {
+					if (popped == '(') {
+						continue;
 					} else {
-						break;
+						return "NO";
 					}
 				}
 
-				if (bracket.equals('}')) {
-					if ((chars.peek()).equals('{')) {
-
-						chars.pop();
-					} else {
-						break;
-					}
-				}
 			}
 		}
 
-		// System.out.println(chars);
-		// System.out.println(chars.peek());
-		if (!chars.empty()) {
+		if (stack.empty()) {
+			return "YES";
+		} else {
 			return "NO";
 		}
 
-		return "YES";
 	}
 
 }
