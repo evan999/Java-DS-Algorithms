@@ -3,7 +3,6 @@ import java.util.*;
 public class InternalNodes {
 
 	public static int count(int[] tree) {
-		int internalNodes = 0;
 		Set<Integer> uniqueNodes = new HashSet<>();
 
 		for (int i = 0; i < tree.length; i++) {
