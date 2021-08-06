@@ -26,7 +26,6 @@ public class Solution {
 			// If UTF-8 instead of ASCII, how would we change this method?
 			// What if this string was coming in from a file?
 			// Could we use this same approach?
-			// Ping Corey
 			//
 		}
 
