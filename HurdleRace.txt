@@ -1,0 +1,32 @@
+0, 
+
+3 - 1 = 2
+he has to take two doses 
+he can do the first naturally 
+
+k = 1
+
+So he can only jump one unit without a dose
+
+k = 4
+
+1 6 3 5 2
+Needs 2 doses to get to 6 
+
+6 - 4 = 2
+
+Max - k = min doses
+
+Remove duplicates from list
+
+Math.max()
+
+k = 7
+
+2 5 4 5 2
+
+if max < k
+  return 0
+
+15 minutes completed
+ 
