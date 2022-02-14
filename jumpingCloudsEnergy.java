@@ -10,45 +10,22 @@ public class Solution {
 
 	// Complete the jumpingOnClouds function below.
 	static int jumpingOnClouds(int[] clouds, int k) {
-		// c[(i + k) % n]
-		// e = 100
-		// Character uses 1 unit of energy to make a jump of size k
-		// to cloud c[(i + k) % n]
-		// Thundercloud -> c[i] = 1
-		// e - 2
-
-		// c = [0, 0, 1, 0]
-		// k = 2
-		//
-
-		// Declare energy integer variable
 		int energy = 100;
 		int index = 0;
 
 		while (true) {
 			if (clouds[index] == 1) {
-				energy = energy - 2;
+				energy -= 2;
 			}
-			// if (clouds[index+k] == 1) {
-			// energy -= 2;
-			// }
+
+			index = (index += k) % clouds.length;
 			energy--;
+			if (index == 0) {
+				return energy;
+			}
 		}
-		// for (int index = 0; index < clouds.length; index++) {
-		// int nextCloud = clouds[index+k] % clouds.length;
-		// System.out.println(nextCloud);
-		// }
 
-		return energy;
-		// Loop through clouds array
-		// nextCloud = clouds[index+k]%n
-		// energy - 1
-		// if nextCloud is a thunderhead (clouds[index] = 1)
-		// energy - 2
-		//
-
-		// The game ends when character lands on cloud 0
-		// Determine the final value of e (energy) after the game ends
+		// return energy;
 	}
 
 	private static final Scanner scanner = new Scanner(System.in);
